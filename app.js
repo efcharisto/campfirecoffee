@@ -5,8 +5,8 @@ var pikePlace = {
   location: 'Pike Place market',
   minCust: 14,
   maxCust: 35,
-  cupsCust: 1.2, // 1 lbs is 16 cups
-  poundCust: 0.34,
+  averageCups: 1.2, // 1 lbs is 16 cups
+  averagePounds: 0.34,
   hourCups: [],
   hourPounds: [],
   dailyCups: [],
@@ -20,9 +20,9 @@ var pikePlace = {
   randomNumber: function(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
-//  var projectedCups = (randomNum() * cupsCust);
+
   projectedCups: function() {
-    console.log(averageCups * randomNum);
+    console.log(this.averageCups * this.randomNum);
   }
 
 }
