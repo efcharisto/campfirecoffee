@@ -14,5 +14,11 @@ var pikePlace = {
   dailyPounds: ;
   workersHourly: ; //need 2mins a customer
   workersDaily: ;
-  var randomCust = Math.Random() * (35 - 14) + 14;
+
+}
+//function randomCust = Math.Random() * (maxCust - minCust) + minCust; 
+  function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
