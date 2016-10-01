@@ -7,11 +7,11 @@ var pikePlace = {
   maxCust: 35,
   averageCups: 1.2, // 1 lbs is 16 cups
   averagePounds: 0.34,
+  projectCups: [],
   hourlyCups: [],
   hourlyPounds: [],
   dailyCups: [],
   dailyPounds: [],
-  projectedCups: [],
   hourlyBarista: [], //need 2mins a customer
   dailyBarista: [],
 
