@@ -8,10 +8,10 @@ var pikePlace = {
   averageCups: 1.2, // 1 lbs is 16 cups
   averagePounds: 0.34,
   hourlyCust: [],
-//dailyCust: [],
+  dailyCust: [],
   hourlyCups: [],
-  hourlyPounds: [],
   dailyCups: [],
+  hourlyPounds: [],
   dailyPounds: [],
   hourlyBarista: [], //need 2mins a customer
   dailyBarista: [],
@@ -26,12 +26,14 @@ var pikePlace = {
   projectedHourlyCust: function() {
     for (var i = 0; i < this.hours.length; i++) {
       this.hourlyCust.push(this.randomNum(this.minCust, this.maxCust));
+      this.dailyCust += this.hours.length;
     }
   },
 
   projectedHourlyCups: function() {
     for (var i = 0; i < this.hours.length; i++) {
       this.hourlyCups.push(this.averageCups * this.randomNum(this.minCust, this.maxCust));
+      this.dailyCups += this.hours.length;
     }
   },
 
