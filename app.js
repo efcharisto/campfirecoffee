@@ -7,7 +7,6 @@ var pikePlace = {
   maxCust: 35,
   averageCups: 1.2, // 1 lbs is 16 cups
   averagePounds: 0.34,
-  projectCups: [],
   hourlyCups: [],
   hourlyPounds: [],
   dailyCups: [],
@@ -23,8 +22,9 @@ var pikePlace = {
   },
 
   projectedCups: function() {
-    return (this.averageCups * this.randomNum(this.minCust, this.maxCust));
+    this.hourlyCups.push(this.averageCups * this.randomNum(this.minCust, this.maxCust));
+    
   },
 
 }
-pikePlace.projectedCups();
+pikePlace.hourlyCups;
