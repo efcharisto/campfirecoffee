@@ -12,7 +12,7 @@ var pikePlace = {
   hourPounds: ;
   dailyCups ;
   dailyPounds: ;
-  workersHourly: ; //need 2mins a customer 
+  workersHourly: ; //need 2mins a customer
   workersDaily: ;
-  var randomCust = math.Random() * (35 - 14) + 14;
+  var randomCust = Math.Random() * (35 - 14) + 14;
 }
