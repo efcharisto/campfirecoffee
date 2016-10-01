@@ -23,7 +23,7 @@ var pikePlace = {
 
   projectedCups: function() {
     this.hourlyCups.push(this.averageCups * this.randomNum(this.minCust, this.maxCust));
-    
+
   },
 
 }
