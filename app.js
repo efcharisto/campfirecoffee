@@ -41,26 +41,20 @@ var pikePlace = {
   },
 // 4th step
   projectedHourlyPounds: function() {
-    for (var i = 0; i < this.hours.lenght; i++) {
+    for (var i = 0; i < this.hours.length; i++) {
       var pound = this.averagePounds * this.hourlyCust[i]
       this.hourlyPounds.push(pound);
       this.dailyPounds += pound;
-
     }
   },
 
 }
 pikePlace.projectedHourlyCust();
 pikePlace.projectedHourlyCups();
-//pikePlace.projectedHourlyPounds();
+pikePlace.projectedHourlyPounds();
 
 
 
 
 
-/* var x = 1.555
-undefined
-x.toFixed(1)
-"1.6"
-parseFloat(x.toFixed(1))
-1.6 */
+/* parseFloat(VAR.toFixed(1)) */
