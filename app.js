@@ -8,13 +8,13 @@ var pikePlace = {
   averageCups: 1.2, // 1 lbs is 16 cups
   averagePounds: 0.34,
   hourlyCust: [],
-  dailyCust: [],
+  dailyCust: 0,
   hourlyCups: [],
-  dailyCups: [],
+  dailyCups: 0,
   hourlyPounds: [],
-  dailyPounds: [],
+  dailyPounds: 0,
   hourlyBarista: [], //need 2mins a customer
-  dailyBarista: [],
+  dailyBarista: 0,
 
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
     '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'],
@@ -25,17 +25,27 @@ var pikePlace = {
 
   projectedHourlyCust: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      this.hourlyCust.push(this.randomNum(this.minCust, this.maxCust));
-      this.dailyCust += this.hours.length;
+      var cust = this.randomNum(this.minCust, this.maxCust)
+      this.hourlyCust.push(cust);
+      this.dailyCust += cust;
     }
   },
 
   projectedHourlyCups: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      this.hourlyCups.push(this.averageCups * this.randomNum(this.minCust, this.maxCust));
-      this.dailyCups += this.hours.length;
+      var cup = this.averageCups * this.hourlyCust[i]
+      this.hourlyCups.push(cup);
+      this.dailyCups += cup;
     }
   },
 
 }
-pikePlace.hourlyCust;
+pikePlace.projectedHourlyCust();
+pikePlace.projectedHourlyCups();
+
+/* var x = 1.555
+undefined
+x.toFixed(1)
+"1.6"
+parseFloat(x.toFixed(1))
+1.6 */
