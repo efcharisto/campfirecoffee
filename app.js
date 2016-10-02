@@ -19,10 +19,11 @@ var pikePlace = {
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
     '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'],
 
+// First step in tech req
   randomNum: function(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   },
-
+// 2nd step
   projectedHourlyCust: function() {
     for (var i = 0; i < this.hours.length; i++) {
       var cust = this.randomNum(this.minCust, this.maxCust)
@@ -30,7 +31,7 @@ var pikePlace = {
       this.dailyCust += cust;
     }
   },
-
+// 3rd step
   projectedHourlyCups: function() {
     for (var i = 0; i < this.hours.length; i++) {
       var cup = this.averageCups * this.hourlyCust[i]
@@ -38,10 +39,24 @@ var pikePlace = {
       this.dailyCups += cup;
     }
   },
+// 4th step
+  projectedHourlyPounds: function() {
+    for (var i = 0; i < this.hours.lenght; i++) {
+      var pound = this.averagePounds * this.hourlyCust[i]
+      this.hourlyPounds.push(pound);
+      this.dailyPounds += pound;
+
+    }
+  },
 
 }
 pikePlace.projectedHourlyCust();
 pikePlace.projectedHourlyCups();
+//pikePlace.projectedHourlyPounds();
+
+
+
+
 
 /* var x = 1.555
 undefined
