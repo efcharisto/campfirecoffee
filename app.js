@@ -76,7 +76,7 @@ var pikePlace = {
 
   projectedBaristas: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      var barista = (this.hourlyCust[i] * this.timePerCust)
+      var barista = (this.hourlyCust[i] / this.timePerCust)
       this.hourlyBarista.push(barista);
       this.dailyBarista += barista;
     }
