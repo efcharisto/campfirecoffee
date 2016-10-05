@@ -82,6 +82,8 @@ var pikePlace = {
     }
   },
 
+
+//  console.log(this.name);
 }//this is the last bracket
 
 pikePlace.projectedHourlyCust();
@@ -90,8 +92,8 @@ pikePlace.projectedHourlyPounds();
 pikePlace.projectedHourlyBeans();
 pikePlace.projectedBaristas();
 
-/* parseFloat(varName.toFixed(1)) */
-// ADD +1 TO HIT THE MAX ^ NUMBER OPTION TO BE INCLUDED IN RANDOM
-//USE TOFIXED INSIDE OF PARENTHESIS TO AVOID CONVERSION TO STRING
-//add numbers first, turn into integerts, and then use parseFlots
-//first is a paremeter that we pass, vs argument
+// notes to self:
+// parseFloat(varName.toFixed(1))
+// USE TOFIXED INSIDE OF PARENTHESIS TO AVOID CONVERSION TO STRING
+// add numbers first, turn into integerts, and then use parseFlots
+// first is a paremeter that we pass, vs argument
