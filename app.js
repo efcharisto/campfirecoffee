@@ -72,9 +72,9 @@ var pikePlace = {
   // cups per hour / 16 = pounds of beens/hr for cups
   projectedHourlyBeans: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      var beans = this.hourlyCups / this.cupsPerPound
-      this.hourlyBeanCups.push(beans);
-      this.dailyBeanCups += beans;
+      var beansHourCup = parseFloat(this.hourlyCups[i] / this.cupsPerPound)
+      this.hourlyBeanCups.push(beansHourCup);
+      this.dailyBeanCups += beansHourCup;
     }
   },
 
