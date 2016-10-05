@@ -8,7 +8,7 @@ var pikePlace = {
   averageCups: 1.2,
   averagePounds: 0.34,
   cupsPerPound: 16, // 1 lbs is 16 cups
-  timePerCust: 2, // 2min of barista time per client
+  timePerCust: 30, // 2min of time per client. 60min / 2min = 30
 
   hourlyCust: [],
   dailyCust: 0,
@@ -75,6 +75,7 @@ var pikePlace = {
   },
 
   projectedBaristas: function() {
+//daily baristas is legit but hourly is not. 0.46 or 1.1 people...wth
     for (var i = 0; i < this.hours.length; i++) {
       var barista = (this.hourlyCust[i] / this.timePerCust)
       this.hourlyBarista.push(barista);
