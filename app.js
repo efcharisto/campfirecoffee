@@ -73,13 +73,11 @@ var pikePlace = {
   projectedHourlyBeans: function() {
     for (var i = 0; i < this.hours.length; i++) {
       var beansHourCup = parseFloat(this.hourlyCups[i] / this.cupsPerPound)
-      var beansHourBag = parseFloat(this.hourlyPounds[i])
-
       this.hourlyBeanCups.push(beansHourCup);
       this.dailyBeanCups += beansHourCup;
 
-      this.hourlyBeanBags.push(beansHourBag);
-      this.dailyBeanBags += beansHourBag;
+      this.hourlyBeanBags.push(parseFloat(this.hourlyPounds[i]));
+      this.dailyBeanBags += parseFloat(this.hourlyPounds[i]);
     }
   },
 
