@@ -8,6 +8,7 @@ var pikePlace = {
   averageCups: 1.2,
   averagePounds: 0.34,
   cupsPerPound: 16, // 1 lbs is 16 cups
+  timePerCust: 2, // 2min of barista time per client
 
   hourlyCust: [],
   dailyCust: 0,
@@ -24,17 +25,13 @@ var pikePlace = {
   hourlyBeanBags: [],
   dailyBeanBags: 0,
 
+  totalDailyBeans: 0, //lbs used for daily cups + daily coffee bag sales.
+
   hourlyBarista: [], //need 2mins a customer
   dailyBarista: 0,
 
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
     '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'],
-
-/* parseFloat(varName.toFixed(1)) */
-// ADD +1 TO HIT THE MAX ^ NUMBER OPTION TO BE INCLUDED IN RANDOM
-//USE TOFIXED INSIDE OF PARENTHESIS TO AVOID CONVERSION TO STRING
-//add numbers first, turn into integerts, and then use parseFlots
-//first is a paremeter that we pass, vs argument
 
   randomNum: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -63,13 +60,7 @@ var pikePlace = {
       this.dailyPounds += pound;
     }
   },
-  //
-  // beans per hour cups,
-  // +
-  // beans for bags an hour
-  // ______
-  // total beans per hour
-  // cups per hour / 16 = pounds of beens/hr for cups
+
   projectedHourlyBeans: function() {
     for (var i = 0; i < this.hours.length; i++) {
       var beansHourCup = parseFloat(this.hourlyCups[i] / this.cupsPerPound)
@@ -78,12 +69,29 @@ var pikePlace = {
 
       this.hourlyBeanBags.push(parseFloat(this.hourlyPounds[i]));
       this.dailyBeanBags += parseFloat(this.hourlyPounds[i]);
+
+      this.totalDailyBeans = this.dailyBeanCups + this.dailyBeanBags;
     }
   },
 
-}
+  projectedBaristas: function() {
+    for (var i = 0; i < this.hours.length; i++) {
+      var barista = (this.hourlyCust[i] * this.timePerCust)
+      this.hourlyBarista.push(barista);
+      this.dailyBarista += barista;
+    }
+  },
+
+}//this is the last bracket
 
 pikePlace.projectedHourlyCust();
 pikePlace.projectedHourlyCups();
 pikePlace.projectedHourlyPounds();
 pikePlace.projectedHourlyBeans();
+pikePlace.projectedBaristas();
+
+/* parseFloat(varName.toFixed(1)) */
+// ADD +1 TO HIT THE MAX ^ NUMBER OPTION TO BE INCLUDED IN RANDOM
+//USE TOFIXED INSIDE OF PARENTHESIS TO AVOID CONVERSION TO STRING
+//add numbers first, turn into integerts, and then use parseFlots
+//first is a paremeter that we pass, vs argument
