@@ -47,7 +47,7 @@ var pikePlace = {
 // 2nd step
   projectedHourlyCups: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      var cup = this.averageCups * this.hourlyCust[i]
+      var cup = Math.ceil(this.averageCups * this.hourlyCust[i])
       this.hourlyCups.push(cup);
       this.dailyCups += cup;
     }
@@ -55,7 +55,7 @@ var pikePlace = {
 // 3rd step
   projectedHourlyPounds: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      var pound = this.averagePounds * this.hourlyCust[i]
+      var pound = Math.ceil(this.averagePounds * this.hourlyCust[i])
       this.hourlyPounds.push(pound);
       this.dailyPounds += pound;
     }
@@ -63,7 +63,7 @@ var pikePlace = {
 
   projectedHourlyBeans: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      var beansHourCup = parseFloat(this.hourlyCups[i] / this.cupsPerPound)
+      var beansHourCup = parseFloat(Math.ceil(this.hourlyCups[i] / this.cupsPerPound))
       this.hourlyBeanCups.push(beansHourCup);
       this.dailyBeanCups += beansHourCup;
 
@@ -75,9 +75,8 @@ var pikePlace = {
   },
 
   projectedBaristas: function() {
-//daily baristas is legit but hourly is not. 0.46 or 1.1 people...wth
     for (var i = 0; i < this.hours.length; i++) {
-      var barista = (this.hourlyCust[i] / this.timePerCust)
+      var barista = Math.ceil(this.hourlyCust[i] / this.timePerCust)
       this.hourlyBarista.push(barista);
       this.dailyBarista += barista;
     }
