@@ -96,10 +96,8 @@ for (var i=0; i < this.hours.length; i++){
 }//this is the last bracket
 
 //   Pike Place Market
-//
 // 6:00am: 86.4 lbs [23 customers, 27.6 cups (1.4 lbs), 85 lbs to-go]
 // 7:00am: 191.1 lbs [51 customers, 61.2 cups (3.1 lbs), 188 lbs to-go]
-
 
 pikePlace.projectedHourlyCust();
 pikePlace.projectedHourlyCups();
