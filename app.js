@@ -84,9 +84,13 @@ var pikePlace = {
   },
 
   storeOutput: function() {
-    console.log(this.dailyCust + ' is daily client total. ' + this.dailyCups +
-    ' is daily number of cups. ' + this.dailyPounds + ' is daily number of lbs total. '
-    + this.totalDailyBeans + ' is overall daily beans needed for everything.');
+console.log(this.location);
+for (var i=0; i < this.hours.length; i++){
+  console.log(this.hours[i] + ': ' + this.dailyCust + ' is daily client total. ' + this.dailyCups +
+  ' is daily number of cups. ' + this.dailyPounds + ' is daily number of lbs total. '
+  + this.totalDailyBeans + ' is overall daily beans needed for everything.');
+}
+
   },
 
 }//this is the last bracket
