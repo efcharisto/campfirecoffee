@@ -43,7 +43,9 @@ var pikePlace = {
       this.hourlyCust.push(cust);
       this.dailyCust += cust;
     }
+    console.log(this.dailyCust + ' dailyCust');
   },
+
 // 2nd step
   projectedHourlyCups: function() {
     for (var i = 0; i < this.hours.length; i++) {
@@ -51,6 +53,7 @@ var pikePlace = {
       this.hourlyCups.push(cup);
       this.dailyCups += cup;
     }
+    console.log(this.dailyCups + ' dailyCups');
   },
 // 3rd step
   projectedHourlyPounds: function() {
@@ -59,6 +62,7 @@ var pikePlace = {
       this.hourlyPounds.push(pound);
       this.dailyPounds += pound;
     }
+    console.log(this.dailyPounds + ' dailyPounds');
   },
 
   projectedHourlyBeans: function() {
@@ -72,6 +76,7 @@ var pikePlace = {
 
       this.totalDailyBeans = this.dailyBeanCups + this.dailyBeanBags;
     }
+    console.log(this.totalDailyBeans+ ' totalDailyBeans');
   },
 
   projectedBaristas: function() {
@@ -83,6 +88,12 @@ var pikePlace = {
   },
 
 }//this is the last bracket
+
+//   Pike Place Market
+//
+// 6:00am: 86.4 lbs [23 customers, 27.6 cups (1.4 lbs), 85 lbs to-go]
+// 7:00am: 191.1 lbs [51 customers, 61.2 cups (3.1 lbs), 188 lbs to-go]
+
 
 pikePlace.projectedHourlyCust();
 pikePlace.projectedHourlyCups();
