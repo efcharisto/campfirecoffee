@@ -43,7 +43,6 @@ var pikePlace = {
       this.hourlyCust.push(cust);
       this.dailyCust += cust;
     }
-    console.log(this.dailyCust + ' dailyCust');
   },
 
 // 2nd step
@@ -53,7 +52,6 @@ var pikePlace = {
       this.hourlyCups.push(cup);
       this.dailyCups += cup;
     }
-    console.log(this.dailyCups + ' dailyCups');
   },
 // 3rd step
   projectedHourlyPounds: function() {
@@ -62,7 +60,6 @@ var pikePlace = {
       this.hourlyPounds.push(pound);
       this.dailyPounds += pound;
     }
-    console.log(this.dailyPounds + ' dailyPounds');
   },
 
   projectedHourlyBeans: function() {
@@ -76,7 +73,6 @@ var pikePlace = {
 
       this.totalDailyBeans = this.dailyBeanCups + this.dailyBeanBags;
     }
-    console.log(this.totalDailyBeans+ ' totalDailyBeans');
   },
 
   projectedBaristas: function() {
@@ -85,6 +81,12 @@ var pikePlace = {
       this.hourlyBarista.push(barista);
       this.dailyBarista += barista;
     }
+  },
+
+  storeOutput: function() {
+    console.log(this.dailyCust + ' is daily client total. ' + this.dailyCups +
+    ' is daily number of cups. ' + this.dailyPounds + ' is daily number of lbs total. '
+    + this.totalDailyBeans + ' is overall daily beans needed for everything.');
   },
 
 }//this is the last bracket
@@ -100,6 +102,7 @@ pikePlace.projectedHourlyCups();
 pikePlace.projectedHourlyPounds();
 pikePlace.projectedHourlyBeans();
 pikePlace.projectedBaristas();
+pikePlace.storeOutput();
 
 // notes to self:
 // parseFloat(varName.toFixed(1))
