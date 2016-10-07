@@ -82,8 +82,6 @@ var pikePlace = {
     }
   },
 
-
-//  console.log(this.name);
 }//this is the last bracket
 
 pikePlace.projectedHourlyCust();
