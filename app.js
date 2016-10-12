@@ -1,5 +1,19 @@
 'use strict';
 
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
+  '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'];
+
+var hoursEl = document.getElementById('hours');
+var ulEl = document.createElement('ul');
+
+for (var i=0; i < hours.length; i++) {
+  var liEl = document.createElement('li');
+  liEl.textContent = hours[i];
+  console.log(liEl);
+}
+
+
+
 var pikePlace = {
 
   location: 'Pike Place market',
@@ -22,7 +36,7 @@ var pikePlace = {
   hourlyBeanCups: [], // 1 lbs is 16 cups
   dailyBeanCups: 0,
 
-  hourlyBeanBags: [],
+  hourlyBeanBags: [], // to go sales
   dailyBeanBags: 0,
 
   totalDailyBeans: 0, //lbs used for daily cups + daily coffee bag sales.
@@ -87,7 +101,7 @@ var pikePlace = {
   storeOutput: function() {
     console.log(this.location);
     for (var i=0; i < this.hours.length; i++){
-      console.log(this.hours[i] + ': ' + this.hourlyCust[i] + ' hourly clients. ' + this.hourlyCups[i] + ' hourly cups. ' + this.hourlyPounds[i] + ' hourly bags. ' + this.totalDailyBeans + ' total beans lbs.');
+      console.log(this.hours[i] + ': ' + this.hourlyCust[i] + ' hourly clients. ' + this.hourlyCups[i] + ' hourly cups. ' + this.hourlyPounds[i] + ' hourly lbs. ' + this.totalDailyBeans + ' total beans lbs.');
     } //get a variable for TOTAL beans per hour for cups and bags of coffee
   },
 
