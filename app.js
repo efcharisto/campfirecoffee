@@ -1,18 +1,36 @@
 'use strict';
 
+//PRACTICE DOM:
+// var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'];
+//
+// var hoursEl = document.getElementById('hours');
+// var ulEl = document.createElement('ul');
+//
+// for (var i=0; i < hours.length; i++) {
+//   var liEl = document.createElement('li');
+//   liEl.textContent = hours[i];
+//   ulEl.appendChild(liEl);//take each value of liEL and append as a child to ulEl
+// }
+// hoursEl.appendChild(ulEl);
 
-//PRACTICE:
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'];
 
-var hoursEl = document.getElementById('hours');
-var ulEl = document.createElement('ul');
-
-for (var i=0; i < hours.length; i++) {
-  var liEl = document.createElement('li');
-  liEl.textContent = hours[i];
-  ulEl.appendChild(liEl);//take each value of liEL and append as a child to ulEl
+//PRACTICE Constructor:
+function round(num, prec){
+  return parseFloat(num.toFixed(prec));
 }
-hoursEl.appendChild(ulEl);
+
+function Item(name, price) {
+ this.name = name;
+ this.price = price;
+ this.tax = 0;
+ this.total = 0;
+}
+
+var socks = new Item('socks', 8.99);
+var shoes = new Item('shoes', 49.99);
+var pantaloons = new Item('pantaloons', 89.99);
+
+
 
 var pikePlace = {
 
