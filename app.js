@@ -31,7 +31,6 @@ var shoes = new Item('shoes', 49.99);
 var pantaloons = new Item('pantaloons', 89.99);
 
 
-
 var pikePlace = {
 
   location: 'Pike Place market',
