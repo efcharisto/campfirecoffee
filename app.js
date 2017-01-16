@@ -13,7 +13,6 @@
 // }
 // hoursEl.appendChild(ulEl);
 
-
 //PRACTICE Constructor:
 function round(num, prec){
   return parseFloat(num.toFixed(prec));
